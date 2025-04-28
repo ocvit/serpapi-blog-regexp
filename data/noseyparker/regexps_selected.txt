@@ -1,0 +1,50 @@
+\bage1[0-9a-z]{58}\b
+\bAGE-SECRET-KEY-1[0-9A-Z]{58}\b
+\b((?:A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16})\b
+(https://[a-zA-Z0-9-]+\.azconfig\.io);Id=(.{4}-.{2}-.{2}:[a-zA-Z0-9+/]{18,22});Secret=([a-zA-Z0-9+/]{36,50}=)
+\bcio[a-zA-Z0-9]{32}\b
+\b(dt0[a-zA-Z]{1}[0-9]{2}\.[A-Z0-9]{24}\.[A-Z0-9]{64})\b
+\b(EAACEdEose0cBA[a-zA-Z0-9]+)\b
+(?:username|USERNAME|user|USER)[ \t]*=[ \t]*["']([a-zA-Z0-9.@_\-+]{3,30})["']\s*[,;]?\s*(?:\s*(?:\#|//)[^\n\r]*[\n\r])*(?:password|pass|PASSWORD|PASS)[ \t]*=[ \t]*["']([^"']{5,30})["']
+(?:username|USERNAME|user|USER)[ \t]*=[ \t]*([a-zA-Z0-9.@_\-+]{3,30})\s*;?\s*(?:\s*(?:\#|//)[^\n\r]*[\n\r])*(?:password|pass|PASSWORD|PASS)[ \t]*=[ \t]*(\S{5,30})(?:\s|$)
+(?:AccountName|SharedAccessKeyName|SharedSecretIssuer)\s*=\s*([^;]{1,80})\s*;\s*.{0,10}\s*(?:AccountKey|SharedAccessKey|SharedSecretValue)\s*=\s*([^;]{1,100})(?:;|$)
+(?:github).?(?:api|app|application|client|consumer|customer)?.?(?:id|identifier|key).{0,2}\s{0,20}.{0,2}\s{0,20}.{0,2}\b([a-z0-9]{20})\b
+(?:User|User Id|UserId|Uid)\s*=\s*([^\s;]{3,100})\s*;[ \t]*.{0,10}[ \t]*(?:Password|Pwd)\s*=\s*([^\s;]{3,100})\s*(?:[;"']|$)
+\b(ghp_[a-zA-Z0-9]{36})\b
+\b(gho_[a-zA-Z0-9]{36})\b
+\b((?:ghu|ghs)_[a-zA-Z0-9]{36})\b
+\b(ghr_[a-zA-Z0-9]{76})\b
+\b(github_pat_[0-9a-zA-Z_]{82})\b
+\b(GR1348941[0-9a-zA-Z_-]{20})(?:\b|$)
+\b(glpat-[0-9a-zA-Z_-]{20})(?:\b|$)
+\b(glptt-[0-9a-f]{40})\b
+\b(GOCSPX-[a-zA-Z0-9_-]{28})(?:[^a-zA-Z0-9_-]|$)
+\b(ya29\.[0-9A-Za-z_-]{20,1000})(?:[^0-9A-Za-z_-]|$)
+\b(AIza[0-9A-Za-z_-]{35})\b
+\b(eyJrIjoi[A-Za-z0-9]{60,100})\b
+\b(glc_eyJrIjoi[A-Za-z0-9]{60,100})\b
+\b(glsa_[a-zA-Z0-9]{32}_[a-fA-F0-9]{8})\b
+(\$1\$[./A-Za-z0-9]{8}\$[./A-Za-z0-9]{22})
+(\$2[abxy]\$\d+\$[./A-Za-z0-9]{53})
+\b(ey[a-zA-Z0-9_-]+\.ey[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+)(?:[^a-zA-Z0-9_-]|$)
+(?:(machine\s+[^\s]+)|default)\s+login\s+([^\s]+)\s+password\s+([^\s]+)
+\b(npm_[A-Za-z0-9]{36})\b
+\b(oy2[a-z0-9]{43})\b
+\b(sk-[a-zA-Z0-9]{48})\b
+-----BEGIN .{0,20} ?PRIVATE KEY ?.{0,20}-----\s*((?:[a-zA-Z0-9+/=\s"',]|\r|\n){50,})\s*-----END .{0,20} ?PRIVATE KEY ?.{0,20}-----
+\b(PMAK-[a-zA-Z0-9]{24}-[a-zA-Z0-9]{34})\b
+\b(pypi-AgEIcHlwaS5vcmc[a-zA-Z0-9_-]{50,})(?:[^a-zA-Z0-9_-]|$)
+\b(sgp_[a-zA-Z0-9]{64})\b
+\b(SG\.[0-9A-Za-z_-]{22}\.[0-9A-Za-z_-]{43})\b
+\b((?:[a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.myshopify\.com)\b
+\b(shpss_[a-fA-F0-9]{32})\b
+\b(shpat_[a-fA-F0-9]{32})\b
+\b(shpca_[a-fA-F0-9]{32})\b
+\b(shppa_[a-fA-F0-9]{32})\b
+\b(xox[baprs]-[a-zA-Z0-9]{10,48})\b
+\b(xox[pboa]-[0-9]{12}-[0-9]{12}-[0-9]{12}-[a-z0-9]{32})\b
+\b(hawk\.[0-9A-Za-z_-]{20}\.[0-9A-Za-z_-]{20})\b
+\b(\d+:AA[a-zA-Z0-9_-]{32,33})(?:[^a-zA-Z0-9_-]|$)
+\btwitter.?(?:api|app|application|client|consumer|customer)?.?(?:id|identifier|key).{0,2}\s{0,20}.{0,2}\s{0,20}.{0,2}\b([a-z0-9]{18,25})\b
+https://hooks.slack.com/services/(T[a-z0-9_]{8}/B[a-z0-9_]{8,12}/[a-z0-9_]{24})
+psexec.{0,100}-u\s*(\S+)\s+-p\s*(\S+)

@@ -10,21 +10,6 @@ require_relative "helpers"
 #   without capture group it's just true/false
 
 EXAMPLES = {
-  "literal/sherlock-en-clean" => {
-    haystack: {
-      path: "./data/opensubtitles/en-sampled-clean.txt"
-    },
-    patterns: {
-      ruby: 'Sherlock Holmes',
-      re2: '(Sherlock Holmes)',
-      rust: 'Sherlock Holmes'
-    },
-    validations: {
-      count: {
-        :* => 513
-      }
-    }
-  },
   "literal/sherlock-en" => {
     haystack: {
       path: "./data/opensubtitles/en-sampled.txt"

@@ -97,7 +97,79 @@ EXAMPLES.each do |title, example|
   end
 end
 
-# [macOS | M1 Max]
+
+# [Ubuntu 24.04.1 LTS | DigitalOcean CPU-optimized Intel 4 vCPUs / 8 GiB]
+#
+# -- [bounded-repeat/letters-en]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [x86_64-linux]
+# Warming up --------------------------------------
+#                 ruby    16.000 i/100ms
+#                  re2    69.000 i/100ms
+#           rust/regex   205.000 i/100ms
+# Calculating -------------------------------------
+#                 ruby    160.076 (± 1.2%) i/s    (6.25 ms/i) -    816.000 in   5.098412s
+#                  re2    694.208 (± 0.9%) i/s    (1.44 ms/i) -      3.519k in   5.069443s
+#           rust/regex      2.046k (± 0.3%) i/s  (488.76 μs/i) -     10.250k in   5.009798s
+
+# Comparison:
+#           rust/regex:     2046.0 i/s
+#                  re2:      694.2 i/s - 2.95x  slower
+#                 ruby:      160.1 i/s - 12.78x  slower
+
+
+# -- [bounded-repeat/letters-ru]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [x86_64-linux]
+# Warming up --------------------------------------
+#                 ruby     8.000 i/100ms
+#                  re2     1.000 i/100ms
+#           rust/regex    97.000 i/100ms
+# Calculating -------------------------------------
+#                 ruby     84.089 (± 0.0%) i/s   (11.89 ms/i) -    424.000 in   5.042387s
+#                  re2     16.273 (±18.4%) i/s   (61.45 ms/i) -     80.000 in   5.038373s
+#           rust/regex    970.406 (± 0.7%) i/s    (1.03 ms/i) -      4.947k in   5.098106s
+
+# Comparison:
+#           rust/regex:      970.4 i/s
+#                 ruby:       84.1 i/s - 11.54x  slower
+#                  re2:       16.3 i/s - 59.63x  slower
+
+
+# -- [bounded-repeat/context]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [x86_64-linux]
+# Warming up --------------------------------------
+#                 ruby     1.000 i/100ms
+#                  re2     1.000 i/100ms
+#           rust/regex     1.000 i/100ms
+# Calculating -------------------------------------
+#                 ruby      3.306 (± 0.0%) i/s  (302.47 ms/i) -     17.000 in   5.142134s
+#                  re2      8.342 (± 0.0%) i/s  (119.88 ms/i) -     42.000 in   5.035165s
+#           rust/regex      8.506 (± 0.0%) i/s  (117.56 ms/i) -     43.000 in   5.055945s
+
+# Comparison:
+#           rust/regex:        8.5 i/s
+#                  re2:        8.3 i/s - 1.02x  slower
+#                 ruby:        3.3 i/s - 2.57x  slower
+
+
+# -- [bounded-repeat/capitals]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [x86_64-linux]
+# Warming up --------------------------------------
+#                 ruby     1.000 i/100ms
+#                  re2     9.000 i/100ms
+#           rust/regex     7.000 i/100ms
+# Calculating -------------------------------------
+#                 ruby     14.767 (± 0.0%) i/s   (67.72 ms/i) -     74.000 in   5.011244s
+#                  re2     91.607 (± 0.0%) i/s   (10.92 ms/i) -    459.000 in   5.010646s
+#           rust/regex     77.138 (± 0.0%) i/s   (12.96 ms/i) -    392.000 in   5.081858s
+
+# Comparison:
+#                  re2:       91.6 i/s
+#           rust/regex:       77.1 i/s - 1.19x  slower
+#                 ruby:       14.8 i/s - 6.20x  slower
+#
+# =========================================================================================
+#
+# [macOS 14.7.2 | M1 Max]
 #
 # -- [bounded-repeat/letters-en]
 # ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin23]
@@ -165,6 +237,3 @@ end
 #           rust/regex:       80.0 i/s
 #                  re2:       62.1 i/s - 1.29x  slower
 #                 ruby:       15.2 i/s - 5.25x  slower
-#
-# =========================================================================================
-#

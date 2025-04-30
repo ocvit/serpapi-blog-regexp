@@ -18,6 +18,7 @@ EXAMPLES = {
       line_end: 200_000
     },
     pattern_path: "./data/date/regexp.txt",
+    unicode: false,
     validations: {
       count_spans: {
         :* => 69288
@@ -53,7 +54,28 @@ EXAMPLES.each do |title, example|
   end
 end
 
-# [macOS | M1 Max]
+
+# [Ubuntu 24.04.1 LTS | DigitalOcean CPU-optimized Intel 4 vCPUs / 8 GiB]
+#
+# -- [date/ascii]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [x86_64-linux]
+# Warming up --------------------------------------
+#                 ruby     1.000 i/100ms
+#                  re2     1.000 i/100ms
+#           rust/regex     1.000 i/100ms
+# Calculating -------------------------------------
+#                 ruby      0.583 (± 0.0%) i/s     (1.71 s/i) -      3.000 in   5.141671s
+#                  re2     13.299 (± 0.0%) i/s   (75.19 ms/i) -     67.000 in   5.038107s
+#           rust/regex     18.069 (± 0.0%) i/s   (55.34 ms/i) -     91.000 in   5.036226s
+
+# Comparison:
+#           rust/regex:       18.1 i/s
+#                  re2:       13.3 i/s - 1.36x  slower
+#                 ruby:        0.6 i/s - 30.97x  slower
+#
+# =========================================================================================
+#
+# [macOS 14.7.2 | M1 Max]
 #
 # -- [date/ascii]
 # ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin23]
@@ -70,6 +92,3 @@ end
 #           rust/regex:       18.7 i/s
 #                  re2:       11.9 i/s - 1.57x  slower
 #                 ruby:        0.6 i/s - 30.09x  slower
-#
-# =========================================================================================
-#

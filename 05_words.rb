@@ -20,10 +20,12 @@ EXAMPLES = {
       re2: '(\b[0-9A-Za-z_]+\b)',
       rust: '\b[0-9A-Za-z_]+\b'
     },
+    unicode: false,
     validations: {
       count_spans: {
-        :re2 => 56691,
-        :* => 56601
+        # :re2 => 56691,
+        # :* => 56601
+        :* => 56691
       }
     }
   },
@@ -72,7 +74,45 @@ EXAMPLES.each do |title, example|
   end
 end
 
-# [macOS | M1 Max]
+
+# [Ubuntu 24.04.1 LTS | DigitalOcean CPU-optimized Intel 4 vCPUs / 8 GiB]
+#
+# -- [words/all-english]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [x86_64-linux]
+# Warming up --------------------------------------
+#                 ruby    19.000 i/100ms
+#                  re2    10.000 i/100ms
+#           rust/regex    52.000 i/100ms
+# Calculating -------------------------------------
+#                 ruby    194.375 (± 1.0%) i/s    (5.14 ms/i) -    988.000 in   5.083383s
+#                  re2    102.214 (± 0.0%) i/s    (9.78 ms/i) -    520.000 in   5.087453s
+#           rust/regex    528.470 (± 0.6%) i/s    (1.89 ms/i) -      2.652k in   5.018450s
+
+# Comparison:
+#           rust/regex:      528.5 i/s
+#                 ruby:      194.4 i/s - 2.72x  slower
+#                  re2:      102.2 i/s - 5.17x  slower
+
+
+# -- [words/long-english]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [x86_64-linux]
+# Warming up --------------------------------------
+#                 ruby    35.000 i/100ms
+#                  re2   640.000 i/100ms
+#           rust/regex    85.000 i/100ms
+# Calculating -------------------------------------
+#                 ruby    351.391 (± 0.6%) i/s    (2.85 ms/i) -      1.785k in   5.079936s
+#                  re2      6.397k (± 0.5%) i/s  (156.33 μs/i) -     32.000k in   5.002787s
+#           rust/regex    852.843 (± 0.2%) i/s    (1.17 ms/i) -      4.335k in   5.083041s
+
+# Comparison:
+#                  re2:     6396.6 i/s
+#           rust/regex:      852.8 i/s - 7.50x  slower
+#                 ruby:      351.4 i/s - 18.20x  slower
+#
+# =========================================================================================
+#
+# [macOS 14.7.2 | M1 Max]
 #
 # -- [words/all-english]
 # ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin23]
@@ -106,5 +146,3 @@ end
 #                  re2:     4739.9 i/s
 #           rust/regex:     1070.2 i/s - 4.43x  slower
 #                 ruby:      449.0 i/s - 10.56x  slower
-#
-# =========================================================================================

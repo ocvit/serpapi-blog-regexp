@@ -66,7 +66,7 @@ EXAMPLES = {
       }
     }
   },
-  "literala-alt/sherlock-zh" => {
+  "literal-alt/sherlock-zh" => {
     haystack: {
       path: "./data/opensubtitles/zh-sampled.txt"
     },
@@ -110,7 +110,96 @@ EXAMPLES.each do |title, example|
   end
 end
 
-# [macOS | M1 Max]
+
+# [Ubuntu 24.04.1 LTS | DigitalOcean CPU-optimized Intel 4 vCPUs / 8 GiB]
+#
+# -- [literal-alt/sherlock-en]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [x86_64-linux]
+# Warming up --------------------------------------
+#                 ruby    17.000 i/100ms
+#                  re2    55.000 i/100ms
+#           rust/regex   642.000 i/100ms
+# Calculating -------------------------------------
+#                 ruby    175.748 (± 0.0%) i/s    (5.69 ms/i) -    884.000 in   5.029956s
+#                  re2    552.693 (± 0.7%) i/s    (1.81 ms/i) -      2.805k in   5.075420s
+#           rust/regex      6.407k (± 0.4%) i/s  (156.08 μs/i) -     32.100k in   5.010115s
+
+# Comparison:
+#           rust/regex:     6407.2 i/s
+#                  re2:      552.7 i/s - 11.59x  slower
+#                 ruby:      175.7 i/s - 36.46x  slower
+
+
+# -- [literal-alt/sherlock-casei-en]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [x86_64-linux]
+# Warming up --------------------------------------
+#                 ruby     8.000 i/100ms
+#                  re2    55.000 i/100ms
+#           rust/regex   289.000 i/100ms
+# Calculating -------------------------------------
+#                 ruby     83.630 (± 0.0%) i/s   (11.96 ms/i) -    424.000 in   5.070034s
+#                  re2    550.273 (± 0.4%) i/s    (1.82 ms/i) -      2.805k in   5.097541s
+#           rust/regex      2.896k (± 0.5%) i/s  (345.30 μs/i) -     14.739k in   5.089453s
+
+# Comparison:
+#           rust/regex:     2896.1 i/s
+#                  re2:      550.3 i/s - 5.26x  slower
+#                 ruby:       83.6 i/s - 34.63x  slower
+
+
+# -- [literal-alt/sherlock-ru]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [x86_64-linux]
+# Warming up --------------------------------------
+#                 ruby     2.000 i/100ms
+#                  re2    32.000 i/100ms
+#           rust/regex   229.000 i/100ms
+# Calculating -------------------------------------
+#                 ruby     29.989 (± 0.0%) i/s   (33.35 ms/i) -    150.000 in   5.001989s
+#                  re2    324.299 (± 0.6%) i/s    (3.08 ms/i) -      1.632k in   5.032606s
+#           rust/regex      2.292k (± 0.5%) i/s  (436.34 μs/i) -     11.679k in   5.096204s
+
+# Comparison:
+#           rust/regex:     2291.8 i/s
+#                  re2:      324.3 i/s - 7.07x  slower
+#                 ruby:       30.0 i/s - 76.42x  slower
+
+
+# -- [literal-alt/sherlock-casei-ru]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [x86_64-linux]
+# Warming up --------------------------------------
+#                 ruby     1.000 i/100ms
+#                  re2    31.000 i/100ms
+#           rust/regex    62.000 i/100ms
+# Calculating -------------------------------------
+#                 ruby     12.274 (± 0.0%) i/s   (81.47 ms/i) -     62.000 in   5.051406s
+#                  re2    314.334 (± 0.6%) i/s    (3.18 ms/i) -      1.581k in   5.029859s
+#           rust/regex    627.731 (± 0.6%) i/s    (1.59 ms/i) -      3.162k in   5.037377s
+
+# Comparison:
+#           rust/regex:      627.7 i/s
+#                  re2:      314.3 i/s - 2.00x  slower
+#                 ruby:       12.3 i/s - 51.14x  slower
+
+
+# -- [literal-alt/sherlock-zh]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [x86_64-linux]
+# Warming up --------------------------------------
+#                 ruby     8.000 i/100ms
+#                  re2    73.000 i/100ms
+#           rust/regex   995.000 i/100ms
+# Calculating -------------------------------------
+#                 ruby     84.924 (± 0.0%) i/s   (11.78 ms/i) -    432.000 in   5.087020s
+#                  re2    737.563 (± 0.1%) i/s    (1.36 ms/i) -      3.723k in   5.047722s
+#           rust/regex     10.016k (± 0.4%) i/s   (99.84 μs/i) -     50.745k in   5.066428s
+
+# Comparison:
+#           rust/regex:    10016.1 i/s
+#                  re2:      737.6 i/s - 13.58x  slower
+#                 ruby:       84.9 i/s - 117.94x  slower
+#
+# =========================================================================================
+#
+# [macOS 14.7.2 | M1 Max]
 #
 # -- [literal-alt/sherlock-en]
 # ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin23]
@@ -180,7 +269,7 @@ end
 #                 ruby:       14.1 i/s - 56.20x  slower
 
 
-# -- [literala-alt/sherlock-zh]
+# -- [literal-alt/sherlock-zh]
 # ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin23]
 # Warming up --------------------------------------
 #                 ruby     9.000 i/100ms
@@ -195,6 +284,3 @@ end
 #           rust/regex:     9371.3 i/s
 #                  re2:      502.7 i/s - 18.64x  slower
 #                 ruby:       94.9 i/s - 98.79x  slower
-#
-# =========================================================================================
-#

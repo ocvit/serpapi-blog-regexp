@@ -98,7 +98,80 @@ EXAMPLES.each do |title, example|
   end
 end
 
-# [macOS | M1 Max]
+
+# [Ubuntu 24.04.1 LTS | DigitalOcean CPU-optimized Intel 4 vCPUs / 8 GiB]
+#
+# -- [noseyparker/default]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [x86_64-linux]
+# Warming up --------------------------------------
+#                 ruby     1.000 i/100ms
+#                  re2     1.000 i/100ms
+#           rust/regex     5.000 i/100ms
+#              re2 set     4.000 i/100ms
+#       rust/regex set     1.000 i/100ms
+# Calculating -------------------------------------
+#                 ruby      2.259 (± 0.0%) i/s  (442.76 ms/i) -     12.000 in   5.313185s
+#                  re2      2.229 (± 0.0%) i/s  (448.62 ms/i) -     12.000 in   5.383492s
+#           rust/regex     54.259 (± 0.0%) i/s   (18.43 ms/i) -    275.000 in   5.068428s
+#              re2 set     46.733 (± 0.0%) i/s   (21.40 ms/i) -    236.000 in   5.050062s
+#       rust/regex set      0.179 (± 0.0%) i/s     (5.58 s/i) -      1.000 in   5.576035s
+
+# Comparison:
+#           rust/regex:       54.3 i/s
+#              re2 set:       46.7 i/s - 1.16x  slower
+#                 ruby:        2.3 i/s - 24.02x  slower
+#                  re2:        2.2 i/s - 24.34x  slower
+#       rust/regex set:        0.2 i/s - 302.55x  slower
+
+
+# -- [noseyparker/no-unicode]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [x86_64-linux]
+# Warming up --------------------------------------
+#                 ruby     1.000 i/100ms
+#                  re2     1.000 i/100ms
+#           rust/regex     5.000 i/100ms
+#              re2 set     4.000 i/100ms
+#       rust/regex set     6.000 i/100ms
+# Calculating -------------------------------------
+#                 ruby      2.261 (± 0.0%) i/s  (442.30 ms/i) -     12.000 in   5.307593s
+#                  re2      2.222 (± 0.0%) i/s  (449.97 ms/i) -     12.000 in   5.399727s
+#           rust/regex     58.438 (± 0.0%) i/s   (17.11 ms/i) -    295.000 in   5.048170s
+#              re2 set     46.765 (± 0.0%) i/s   (21.38 ms/i) -    236.000 in   5.046541s
+#       rust/regex set     63.660 (± 0.0%) i/s   (15.71 ms/i) -    324.000 in   5.089633s
+
+# Comparison:
+#       rust/regex set:       63.7 i/s
+#           rust/regex:       58.4 i/s - 1.09x  slower
+#              re2 set:       46.8 i/s - 1.36x  slower
+#                 ruby:        2.3 i/s - 28.16x  slower
+#                  re2:        2.2 i/s - 28.65x  slower
+
+
+# -- [noseyparker/no-unicode-no-wide-scopes]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [x86_64-linux]
+# Warming up --------------------------------------
+#                 ruby     1.000 i/100ms
+#                  re2     1.000 i/100ms
+#           rust/regex    10.000 i/100ms
+#              re2 set     9.000 i/100ms
+#       rust/regex set    55.000 i/100ms
+# Calculating -------------------------------------
+#                 ruby      6.987 (± 0.0%) i/s  (143.12 ms/i) -     35.000 in   5.009224s
+#                  re2      3.223 (± 0.0%) i/s  (310.31 ms/i) -     17.000 in   5.275362s
+#           rust/regex    103.759 (± 1.0%) i/s    (9.64 ms/i) -    520.000 in   5.011819s
+#              re2 set     94.412 (± 1.1%) i/s   (10.59 ms/i) -    477.000 in   5.053396s
+#       rust/regex set    559.751 (± 0.4%) i/s    (1.79 ms/i) -      2.805k in   5.011212s
+
+# Comparison:
+#       rust/regex set:      559.8 i/s
+#           rust/regex:      103.8 i/s - 5.39x  slower
+#              re2 set:       94.4 i/s - 5.93x  slower
+#                 ruby:        7.0 i/s - 80.11x  slower
+#                  re2:        3.2 i/s - 173.70x  slower
+#
+# =========================================================================================
+#
+# [macOS 14.7.2 | M1 Max]
 #
 # -- [noseyparker/default]
 # ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin23]
@@ -167,6 +240,3 @@ end
 #              re2 set:       62.6 i/s - 4.49x  slower
 #                 ruby:        6.9 i/s - 40.94x  slower
 #                  re2:        2.1 i/s - 131.45x  slower
-#
-# =========================================================================================
-#

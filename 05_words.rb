@@ -20,12 +20,10 @@ EXAMPLES = {
       re2: '(\b[0-9A-Za-z_]+\b)',
       rust: '\b[0-9A-Za-z_]+\b'
     },
-    unicode: false,
     validations: {
       count_spans: {
-        # :re2 => 56691,
-        # :* => 56601
-        :* => 56691
+        :re2 => 56691,
+        :* => 56601
       }
     }
   },
@@ -112,37 +110,37 @@ end
 #
 # =========================================================================================
 #
-# [macOS 14.7.2 | M1 Max]
+# [macOS 15.4.1 | M4 Max]
 #
 # -- [words/all-english]
-# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin23]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin24]
 # Warming up --------------------------------------
-#                 ruby    30.000 i/100ms
-#                  re2    10.000 i/100ms
-#           rust/regex    72.000 i/100ms
+#                 ruby    45.000 i/100ms
+#                  re2    14.000 i/100ms
+#           rust/regex   110.000 i/100ms
 # Calculating -------------------------------------
-#                 ruby    319.228 (± 0.9%) i/s    (3.13 ms/i) -      1.620k in   5.075208s
-#                  re2    101.128 (± 1.0%) i/s    (9.89 ms/i) -    510.000 in   5.043338s
-#           rust/regex    743.666 (± 1.5%) i/s    (1.34 ms/i) -      3.744k in   5.035656s
+#                 ruby    452.238 (± 1.3%) i/s    (2.21 ms/i) -      2.295k in   5.075745s
+#                  re2    137.041 (± 1.5%) i/s    (7.30 ms/i) -    686.000 in   5.007512s
+#           rust/regex      1.101k (± 1.2%) i/s  (908.64 μs/i) -      5.610k in   5.098159s
 
 # Comparison:
-#           rust/regex:      743.7 i/s
-#                 ruby:      319.2 i/s - 2.33x  slower
-#                  re2:      101.1 i/s - 7.35x  slower
+#           rust/regex:     1100.5 i/s
+#                 ruby:      452.2 i/s - 2.43x  slower
+#                  re2:      137.0 i/s - 8.03x  slower
 
 
 # -- [words/long-english]
-# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin23]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin24]
 # Warming up --------------------------------------
-#                 ruby    44.000 i/100ms
-#                  re2   474.000 i/100ms
-#           rust/regex   108.000 i/100ms
+#                 ruby    60.000 i/100ms
+#                  re2   736.000 i/100ms
+#           rust/regex   157.000 i/100ms
 # Calculating -------------------------------------
-#                 ruby    448.989 (± 1.1%) i/s    (2.23 ms/i) -      2.288k in   5.096466s
-#                  re2      4.740k (± 0.4%) i/s  (210.97 μs/i) -     24.174k in   5.100145s
-#           rust/regex      1.070k (± 3.6%) i/s  (934.37 μs/i) -      5.400k in   5.053125s
+#                 ruby    602.433 (± 1.0%) i/s    (1.66 ms/i) -      3.060k in   5.079850s
+#                  re2      7.383k (± 0.7%) i/s  (135.45 μs/i) -     37.536k in   5.084417s
+#           rust/regex      1.581k (± 1.1%) i/s  (632.65 μs/i) -      8.007k in   5.066292s
 
 # Comparison:
-#                  re2:     4739.9 i/s
-#           rust/regex:     1070.2 i/s - 4.43x  slower
-#                 ruby:      449.0 i/s - 10.56x  slower
+#                  re2:     7382.9 i/s
+#           rust/regex:     1580.6 i/s - 4.67x  slower
+#                 ruby:      602.4 i/s - 12.26x  slower

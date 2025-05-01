@@ -169,71 +169,71 @@ end
 #
 # =========================================================================================
 #
-# [macOS 14.7.2 | M1 Max]
+# [macOS 15.4.1 | M4 Max]
 #
 # -- [bounded-repeat/letters-en]
-# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin23]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin24]
 # Warming up --------------------------------------
-#                 ruby    16.000 i/100ms
-#                  re2    63.000 i/100ms
-#           rust/regex   244.000 i/100ms
+#                 ruby    26.000 i/100ms
+#                  re2    92.000 i/100ms
+#           rust/regex   363.000 i/100ms
 # Calculating -------------------------------------
-#                 ruby    168.495 (± 1.8%) i/s    (5.93 ms/i) -    848.000 in   5.034052s
-#                  re2    645.614 (± 1.5%) i/s    (1.55 ms/i) -      3.276k in   5.075453s
-#           rust/regex      2.446k (± 1.6%) i/s  (408.79 μs/i) -     12.444k in   5.088395s
+#                 ruby    270.185 (± 1.5%) i/s    (3.70 ms/i) -      1.352k in   5.005210s
+#                  re2    906.339 (± 2.0%) i/s    (1.10 ms/i) -      4.600k in   5.077358s
+#           rust/regex      3.610k (± 0.8%) i/s  (277.00 μs/i) -     18.150k in   5.027848s
 
 # Comparison:
-#           rust/regex:     2446.2 i/s
-#                  re2:      645.6 i/s - 3.79x  slower
-#                 ruby:      168.5 i/s - 14.52x  slower
+#           rust/regex:     3610.1 i/s
+#                  re2:      906.3 i/s - 3.98x  slower
+#                 ruby:      270.2 i/s - 13.36x  slower
 
 
 # -- [bounded-repeat/letters-ru]
-# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin23]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin24]
 # Warming up --------------------------------------
-#                 ruby    13.000 i/100ms
+#                 ruby    18.000 i/100ms
 #                  re2     2.000 i/100ms
-#           rust/regex   121.000 i/100ms
+#           rust/regex   184.000 i/100ms
 # Calculating -------------------------------------
-#                 ruby    132.281 (± 1.5%) i/s    (7.56 ms/i) -    663.000 in   5.013382s
-#                  re2     20.755 (± 4.8%) i/s   (48.18 ms/i) -    104.000 in   5.020026s
-#           rust/regex      1.210k (± 2.0%) i/s  (826.32 μs/i) -      6.050k in   5.001236s
+#                 ruby    188.392 (± 1.6%) i/s    (5.31 ms/i) -    954.000 in   5.065428s
+#                  re2     25.344 (± 7.9%) i/s   (39.46 ms/i) -    126.000 in   5.003300s
+#           rust/regex      1.798k (± 2.6%) i/s  (556.19 μs/i) -      9.016k in   5.018112s
 
 # Comparison:
-#           rust/regex:     1210.2 i/s
-#                 ruby:      132.3 i/s - 9.15x  slower
-#                  re2:       20.8 i/s - 58.31x  slower
+#           rust/regex:     1798.0 i/s
+#                 ruby:      188.4 i/s - 9.54x  slower
+#                  re2:       25.3 i/s - 70.94x  slower
 
 
 # -- [bounded-repeat/context]
-# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin23]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin24]
 # Warming up --------------------------------------
 #                 ruby     1.000 i/100ms
 #                  re2     1.000 i/100ms
 #           rust/regex     1.000 i/100ms
 # Calculating -------------------------------------
-#                 ruby      3.655 (± 0.0%) i/s  (273.64 ms/i) -     19.000 in   5.199401s
-#                  re2      8.436 (± 0.0%) i/s  (118.53 ms/i) -     43.000 in   5.103992s
-#           rust/regex      9.914 (± 0.0%) i/s  (100.86 ms/i) -     50.000 in   5.046868s
+#                 ruby      4.949 (± 0.0%) i/s  (202.06 ms/i) -     25.000 in   5.051655s
+#                  re2     12.545 (± 0.0%) i/s   (79.72 ms/i) -     63.000 in   5.023172s
+#           rust/regex     14.656 (± 0.0%) i/s   (68.23 ms/i) -     74.000 in   5.049616s
 
 # Comparison:
-#           rust/regex:        9.9 i/s
-#                  re2:        8.4 i/s - 1.18x  slower
-#                 ruby:        3.7 i/s - 2.71x  slower
+#           rust/regex:       14.7 i/s
+#                  re2:       12.5 i/s - 1.17x  slower
+#                 ruby:        4.9 i/s - 2.96x  slower
 
 
 # -- [bounded-repeat/capitals]
-# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin23]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin24]
 # Warming up --------------------------------------
-#                 ruby     1.000 i/100ms
-#                  re2     6.000 i/100ms
-#           rust/regex     7.000 i/100ms
+#                 ruby     2.000 i/100ms
+#                  re2     9.000 i/100ms
+#           rust/regex    11.000 i/100ms
 # Calculating -------------------------------------
-#                 ruby     15.233 (± 0.0%) i/s   (65.65 ms/i) -     77.000 in   5.056024s
-#                  re2     62.064 (± 0.0%) i/s   (16.11 ms/i) -    312.000 in   5.027123s
-#           rust/regex     80.028 (± 1.2%) i/s   (12.50 ms/i) -    406.000 in   5.073509s
+#                 ruby     22.783 (± 0.0%) i/s   (43.89 ms/i) -    114.000 in   5.005323s
+#                  re2     96.967 (± 3.1%) i/s   (10.31 ms/i) -    486.000 in   5.017080s
+#           rust/regex    112.883 (± 0.9%) i/s    (8.86 ms/i) -    572.000 in   5.067475s
 
 # Comparison:
-#           rust/regex:       80.0 i/s
-#                  re2:       62.1 i/s - 1.29x  slower
-#                 ruby:       15.2 i/s - 5.25x  slower
+#           rust/regex:      112.9 i/s
+#                  re2:       97.0 i/s - 1.16x  slower
+#                 ruby:       22.8 i/s - 4.95x  slower

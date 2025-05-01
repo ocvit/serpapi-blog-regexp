@@ -75,20 +75,20 @@ end
 #
 # =========================================================================================
 #
-# [macOS 14.7.2 | M1 Max]
+# [macOS 15.4.1 | M4 Max]
 #
 # -- [date/ascii]
-# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin23]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin24]
 # Warming up --------------------------------------
 #                 ruby     1.000 i/100ms
 #                  re2     1.000 i/100ms
-#           rust/regex     1.000 i/100ms
+#           rust/regex     3.000 i/100ms
 # Calculating -------------------------------------
-#                 ruby      0.621 (± 0.0%) i/s     (1.61 s/i) -      4.000 in   6.447173s
-#                  re2     11.897 (± 8.4%) i/s   (84.05 ms/i) -     60.000 in   5.059040s
-#           rust/regex     18.683 (± 0.0%) i/s   (53.53 ms/i) -     94.000 in   5.032798s
+#                 ruby      0.861 (± 0.0%) i/s     (1.16 s/i) -      5.000 in   5.804259s
+#                  re2     16.080 (±12.4%) i/s   (62.19 ms/i) -     78.000 in   5.018671s
+#           rust/regex     29.162 (± 3.4%) i/s   (34.29 ms/i) -    147.000 in   5.043598s
 
 # Comparison:
-#           rust/regex:       18.7 i/s
-#                  re2:       11.9 i/s - 1.57x  slower
-#                 ruby:        0.6 i/s - 30.09x  slower
+#           rust/regex:       29.2 i/s
+#                  re2:       16.1 i/s - 1.81x  slower
+#                 ruby:        0.9 i/s - 33.85x  slower

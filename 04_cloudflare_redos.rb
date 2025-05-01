@@ -138,54 +138,54 @@ end
 #
 # =========================================================================================
 #
-# [macOS 14.7.2 | M1 Max]
+# [macOS 15.4.1 | M4 Max]
 #
 # -- [cloudflare-redos/original]
-# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin23]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin24]
 # Warming up --------------------------------------
-#                 ruby     5.185k i/100ms
-#                  re2    26.771k i/100ms
-#           rust/regex    32.816k i/100ms
+#                 ruby     7.215k i/100ms
+#                  re2    38.000k i/100ms
+#           rust/regex    49.166k i/100ms
 # Calculating -------------------------------------
-#                 ruby     51.707k (± 0.4%) i/s   (19.34 μs/i) -    259.250k in   5.013927s
-#                  re2    267.737k (± 0.4%) i/s    (3.74 μs/i) -      1.365M in   5.099563s
-#           rust/regex    327.787k (± 0.3%) i/s    (3.05 μs/i) -      1.641M in   5.005732s
+#                 ruby     72.430k (± 1.1%) i/s   (13.81 μs/i) -    367.965k in   5.080909s
+#                  re2    378.366k (± 0.7%) i/s    (2.64 μs/i) -      1.900M in   5.021819s
+#           rust/regex    485.080k (± 1.1%) i/s    (2.06 μs/i) -      2.458M in   5.068414s
 
 # Comparison:
-#           rust/regex:   327787.5 i/s
-#                  re2:   267737.2 i/s - 1.22x  slower
-#                 ruby:    51706.7 i/s - 6.34x  slower
+#           rust/regex:   485080.3 i/s
+#                  re2:   378366.3 i/s - 1.28x  slower
+#                 ruby:    72430.0 i/s - 6.70x  slower
 
 
 # -- [cloudflare-redos/simplified-short]
-# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin23]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin24]
 # Warming up --------------------------------------
-#                 ruby    15.188k i/100ms
-#                  re2    27.804k i/100ms
-#           rust/regex   283.837k i/100ms
+#                 ruby    21.128k i/100ms
+#                  re2    37.527k i/100ms
+#           rust/regex   391.888k i/100ms
 # Calculating -------------------------------------
-#                 ruby    151.822k (± 0.7%) i/s    (6.59 μs/i) -    759.400k in   5.002154s
-#                  re2    278.810k (± 0.5%) i/s    (3.59 μs/i) -      1.418M in   5.086038s
-#           rust/regex      2.848M (± 0.3%) i/s  (351.14 ns/i) -     14.476M in   5.082965s
+#                 ruby    208.465k (± 1.9%) i/s    (4.80 μs/i) -      1.056M in   5.069383s
+#                  re2    377.749k (± 1.6%) i/s    (2.65 μs/i) -      1.914M in   5.067872s
+#           rust/regex      3.873M (± 2.1%) i/s  (258.20 ns/i) -     19.594M in   5.061520s
 
 # Comparison:
-#           rust/regex:  2847903.9 i/s
-#                  re2:   278809.6 i/s - 10.21x  slower
-#                 ruby:   151822.3 i/s - 18.76x  slower
+#           rust/regex:  3873017.0 i/s
+#                  re2:   377749.0 i/s - 10.25x  slower
+#                 ruby:   208464.5 i/s - 18.58x  slower
 
 
 # -- [cloudflare-redos/simplified-long]
-# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin23]
+# ruby 3.4.3 (2025-04-14 revision d0b7e5b6a0) +PRISM [arm64-darwin24]
 # Warming up --------------------------------------
-#                 ruby   171.000 i/100ms
-#                  re2   504.000 i/100ms
-#           rust/regex     4.594k i/100ms
+#                 ruby   223.000 i/100ms
+#                  re2   725.000 i/100ms
+#           rust/regex    11.300k i/100ms
 # Calculating -------------------------------------
-#                 ruby      1.728k (± 1.2%) i/s  (578.69 μs/i) -      8.721k in   5.047509s
-#                  re2      5.067k (± 0.3%) i/s  (197.35 μs/i) -     25.704k in   5.072846s
-#           rust/regex     46.325k (± 0.6%) i/s   (21.59 μs/i) -    234.294k in   5.057807s
+#                 ruby      2.389k (± 1.8%) i/s  (418.67 μs/i) -     12.042k in   5.043238s
+#                  re2      7.176k (± 1.7%) i/s  (139.36 μs/i) -     36.250k in   5.053056s
+#           rust/regex    129.314k (± 7.5%) i/s    (7.73 μs/i) -    644.100k in   5.013767s
 
 # Comparison:
-#           rust/regex:    46325.0 i/s
-#                  re2:     5067.0 i/s - 9.14x  slower
-#                 ruby:     1728.0 i/s - 26.81x  slower
+#           rust/regex:   129313.7 i/s
+#                  re2:     7175.9 i/s - 18.02x  slower
+#                 ruby:     2388.5 i/s - 54.14x  slower
